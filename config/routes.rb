@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'students/index'
+ 
 
-  get 'school_classes/index'
+ 
 
   resources :school_classes, only: [:index, :new, :show, :create, :edit, :update] 
   resources :students, only: [:index, :new, :show, :create, :edit, :update]
