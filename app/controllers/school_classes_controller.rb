@@ -22,6 +22,10 @@ class SchoolClassesController < ApplicationController
   end 
 
   def update
+    # binding.pry
+    @school_class = SchoolClass.find(params[:id])
+    @school_class.update(title: params[:school_class][:title], room_number: params[:school_class][:room_number])
+    # binding.pry
   end
 
   private 
