@@ -5,6 +5,7 @@ class StudentsController < ApplicationController
 
   def show 
     @student = Student.find(params[:id])
+    # binding.pry
   end 
 
 
@@ -24,7 +25,8 @@ class StudentsController < ApplicationController
 
   def update
     @student = Student.find(params[:id])
-    @student.update(first_name: params[:school_class][:title], last_name: params[:school_class][:room_number])
+    @student.update(post_params(:first_name, :last_name))
+    redirect_to student_path(@student)
     # binding.pry
   end
 
