@@ -1,23 +1,8 @@
 Rails.application.routes.draw do
-  get 'student_class/new'
+  resources :students, only: [:new, :create, :edit, :update]
+  get '/students', to:'students#index'
 
-  get 'student_class/create'
-
-  get 'student_class/show'
-
-  get 'student_class/edit'
-
-  get 'student_class/update'
-
-  get 'students/new'
-
-  get 'students/create'
-
-  get 'students/show'
-
-  get 'students/edit'
-
-  get 'students/update'
-
+  resources :school_classes, only: [:new, :create, :edit, :update]
+  get '/school_classes', to: 'school_classes#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
