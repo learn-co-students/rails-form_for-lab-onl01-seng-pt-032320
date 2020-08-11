@@ -1,5 +1,5 @@
 class SchoolClassesController < ApplicationController
-  before_action :set_classes, only: [:show, :update]
+  before_action :set_classes, only: [:show, :update, :edit]
   
   def index
     @school_classes = SchoolClass.all
