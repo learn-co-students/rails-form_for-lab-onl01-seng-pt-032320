@@ -6,10 +6,12 @@ class StudentsController < ApplicationController
   end
 
   def new
+    @student = Student.new
   end
 
   def create
-    
+    @student = Student.create(student_params(:first_name, :last_name))
+    redirect_to student_path(@student)
   end
 
   def show
@@ -19,6 +21,8 @@ class StudentsController < ApplicationController
   end
 
   def update
+    @student.update(student_params(@student))
+    redirect_to student_path(@student)
   end
 
   private
