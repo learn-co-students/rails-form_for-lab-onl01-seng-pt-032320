@@ -1,5 +1,6 @@
 class SchoolClassesController < ApplicationController
     def index
+        byebug
         @classes = SchoolClass.all
     end
 
@@ -23,8 +24,7 @@ class SchoolClassesController < ApplicationController
 
     def update
         set_class
-        @class = SchoolClass.update(class_params(:title, :room_number))
-        @class.save
+        @class.update(class_params(:title, :room_number))
         redirect_to school_class_path(@class)
     end
 
