@@ -1,15 +1,10 @@
-<h1>Coupon Form</h1>
-<form action="<%= coupons_path %>" method="POST">
-    <%=form_tag coupons_path do%>
-    
-        <label>Coupon Code</label><br>
-        <%= text_field_tag :'coupon[coupon_code]' %><br>
+<h1> New School Class </h1>
+<%= form_for @school_class do |f| %>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %><br>
 
-        <label>Store</label><br>
-        <%= text_field_tag :'coupon[store]' %><br>
-    
-        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-        <%= submit_tag "Submit Coupon"%>
+    <%= f.label :room_number %><br>
+    <%= f.text_field :room_number %><br>
 
-    <%end%>
-</form>
+    <%= f.submit %>
+ <%end%>
